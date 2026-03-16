@@ -4,6 +4,8 @@ project(Optimization_lab0)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Optimization_lab0 main.cpp
-        Loader.cpp
-        Loader.h
+        ProblemData.cpp
+        ProblemData.h
+        Solution.cpp
+        Solution.h
 )
