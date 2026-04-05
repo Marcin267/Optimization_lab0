@@ -1,0 +1,9 @@
+{
+  "problem_file": "testData.txt",
+  "algorithms": ["genetic"],
+  "population_size": 100,
+  "generations": 100,
+  "mutation_prob": 0.8,
+  "cross_prob": 0.1,
+  "tournament_size": 5
+}

@@ -24,22 +24,26 @@ void Solution::fillJobSequence()
     }
 }
 
-void Solution::mutate()
+void Solution::mutate(float probability)
 {
-    unsigned int first_index = rand() % jobs_sequence_length;
-    unsigned int second_index = rand() % jobs_sequence_length;
-    if (first_index == second_index)
+    if ((rand() % 100) < (probability * 100))
     {
-        while (first_index != second_index)
-            second_index = rand() % jobs_sequence_length;
-    }
+        int first_index = rand() % jobs_sequence_length;
+        int second_index = rand() % jobs_sequence_length;
 
-    unsigned int temp = job_sequence[first_index];
-    job_sequence[first_index] = job_sequence[second_index];
-    job_sequence[second_index] = temp;
+        if (first_index == second_index)
+        {
+            while (first_index != second_index)
+                second_index = rand() % jobs_sequence_length;
+        }
+
+        unsigned int temp = job_sequence[first_index];
+        job_sequence[first_index] = job_sequence[second_index];
+        job_sequence[second_index] = temp;
+    }
 }
 
-Solution Solution::operator+(Solution father)
+Solution Solution::operator+(const Solution& father) const
 {
     unsigned int start_index = rand() % jobs_sequence_length;
     unsigned int end_index = rand() % jobs_sequence_length;
@@ -76,3 +80,7 @@ Solution Solution::operator+(Solution father)
 
     return child;
 }
+
+unsigned int Solution::getJobNumber(unsigned int index) {return job_sequence[index];}
+
+const std::vector<unsigned int> Solution::getJobSequence() const {return job_sequence;}

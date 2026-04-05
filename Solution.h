@@ -12,9 +12,10 @@ class Solution
 
 public:
     explicit Solution(unsigned int job_sequence_length);
-    void mutate();
-    Solution operator+(Solution father);
-
+    void mutate(float probability);
+    unsigned int getJobNumber(unsigned int index);
+    const std::vector<unsigned int> getJobSequence() const;
+    Solution operator+(const Solution& father) const;
 };
 
 

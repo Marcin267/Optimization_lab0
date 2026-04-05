@@ -1,11 +1,15 @@
 #include <iostream>
-#include "ProblemData.h"
+#include "Problem.h"
 #include <ctime>
+#include <fstream>
+#include "GeneticAlgorithm.h"
 
 
 int main()
 {
-    ProblemData* problem = new ProblemData("testData.txt");
-    problem->display();
     srand(time(nullptr));
+    Problem problem("testData.txt");
+    problem.display();
+    GeneticAlgorithm algorithm(problem);
+    algorithm.run("result_file.csv");
 }
