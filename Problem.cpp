@@ -68,9 +68,9 @@ void Problem::display() const
     }
 }
 
-float Problem::calculateC(const Solution& solution) const
+float Problem::calculateC(std::vector<unsigned int> job_sequence) const
 {
-    std::vector<unsigned int> permutation = solution.getJobSequence();
+    std::vector<unsigned int> permutation = job_sequence;
     unsigned int permutation_count = permutation.size();
     unsigned int machines_count = getMachinesNumber();
 
@@ -100,7 +100,7 @@ std::vector<float> Problem::evaluate(const std::vector<Solution> &solutions) con
     unsigned int solutions_count = solutions.size();
     results.resize(solutions_count);
     for (unsigned int i = 0; i < solutions_count; i++)
-        results[i] = calculateC(solutions[i]);
+        results[i] = calculateC(solutions[i].getJobSequence());
     return results;
 }
 

@@ -8,7 +8,6 @@ Solution::Solution(unsigned int jobs_number)
 {
     jobs_sequence_length = jobs_number;
     job_sequence.resize(jobs_sequence_length);
-    fillJobSequence();
 }
 
 void Solution::fillJobSequence()

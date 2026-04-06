@@ -7,10 +7,10 @@
 
 class GeneticAlgorithm
 {
-    unsigned int population_size = 100; //Should be even!!!!! (fix it later)
-    unsigned int generations = 80;
-    float cross_probability = 0.4;
-    float mutation_probability = 0.01;
+    unsigned int population_size = 2000; //Should be even!!!!! (fix it later)
+    unsigned int generations = 100;
+    float cross_probability = 0.7;
+    float mutation_probability = 0.4;
     unsigned int tournament_size = 3;
     const Problem* problem = nullptr;
     std::vector<Solution> population;

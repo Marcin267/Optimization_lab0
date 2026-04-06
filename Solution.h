@@ -7,11 +7,10 @@
 class Solution
 {
     unsigned int jobs_sequence_length = 0;
-    std::vector <unsigned int> job_sequence;
-    void fillJobSequence();
-
 public:
     explicit Solution(unsigned int job_sequence_length);
+    void fillJobSequence();
+    std::vector <unsigned int> job_sequence;
     void mutate(float probability);
     unsigned int getJobNumber(unsigned int index);
     const std::vector<unsigned int> getJobSequence() const;

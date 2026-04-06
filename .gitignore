@@ -3,7 +3,9 @@ cmake-build-release/
 
 .idea/
 *.user
-
+result_file.csv
+random_results.csv
+greedy_results.csv
 *.o
 *.exe
 *.out

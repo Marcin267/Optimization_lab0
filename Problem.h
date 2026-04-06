@@ -26,7 +26,7 @@ public:
     unsigned int getUpperBound() const;
     unsigned int getLowerBound() const;
     std::vector<float> evaluate(const std::vector<Solution>& solutions) const;
-    float calculateC(const Solution& solution) const;
+    float calculateC(std::vector<unsigned int> job_sequence) const;
 };
 
 

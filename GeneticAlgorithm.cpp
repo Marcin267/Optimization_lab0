@@ -74,6 +74,7 @@ void GeneticAlgorithm::initialize()
     for (unsigned int i = 0; i < population_size; i++)
     {
         Solution solution(jobs_number);
+        solution.fillJobSequence();
         population.push_back(solution);
     }
 }
@@ -89,12 +90,12 @@ void GeneticAlgorithm::saveResults(int generation, std::ofstream& results_file)
     results_file << generation_number << ";" << best << ";" << avg << ";" << worst << std::endl;
 }
 
-void GeneticAlgorithm::run(const std::string& filename)
+void GeneticAlgorithm::run(const std::string& file_name)
 {
     initialize();
 
     std::ofstream result_file;
-    result_file.open(filename, std::ios::app);
+    result_file.open(file_name, std::ios::app);
 
     for (int generation = 1; generation <= generations; generation++)
     {

@@ -10,4 +10,8 @@ add_executable(Optimization_lab0 main.cpp
         Solution.h
         geneticAlgorithm.cpp
         geneticAlgorithm.h
+        GreedyAlgorithm.cpp
+        GreedyAlgorithm.h
+        RandomAlgorithm.cpp
+        RandomAlgorithm.h
 )
