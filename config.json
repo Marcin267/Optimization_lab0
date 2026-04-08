@@ -14,17 +14,16 @@
     "greedy": "greedy_results.csv"
   },
   "algorithm_counts": {
-    "genetic": 1,
-    "random": 1000,
-    "simulated_annealing": 1
+    "genetic": 10,
+    "simulated_annealing": 10
   },
-  "population_size": 10,
-  "generations": 4,
-  "mutation_prob": 0.8,
-  "cross_prob": 0.1,
+  "population_size": 500,
+  "generations": 800,
+  "mutation_prob": 0.45,
+  "cross_prob": 0.75,
   "tournament_size": 5,
   "max_step": 100,
   "max_temperature": 1000,
   "min_temperature": 0.01,
-  "cooling_rate": 0.70
+  "cooling_rate": 0.95
 }

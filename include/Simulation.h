@@ -17,11 +17,11 @@ public:
     std::string config_file = "config.json";
     struct
     {
-        unsigned int population_size = 0;
-        unsigned int generations = 0;
+        int population_size = 0;
+        int generations = 0;
         float mutation_probability = 0;
         float cross_probability = 0;
-        unsigned int tournament_size = 0;
+        int tournament_size = 0;
         int count;
         std::string result_file;
     }genetic_config;
