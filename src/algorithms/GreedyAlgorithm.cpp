@@ -1,14 +1,15 @@
 
-#include "GreedyAlgorithm.h"
+#include "../../include/algorithms/GreedyAlgorithm.h"
 
 #include <algorithm>
 #include <fstream>
 
-GreedyAlgorithm::GreedyAlgorithm(const Problem& problem_data)
+GreedyAlgorithm::GreedyAlgorithm(const Problem& problem_data, std::string file_name)
 {
     problem = &problem_data;
     job_number = problem -> getJobsNumber();
     solutions.reserve(job_number);
+    result_file_name = file_name;
     run();
 }
 
@@ -51,7 +52,7 @@ void GreedyAlgorithm::generateSolutions()
             free_jobs.erase(free_jobs.begin() + best_index);
         }
         Solution solution(job_number);
-        solution.job_sequence = job_sequence;
+        solution.fillJobSequence();
         solutions.push_back(solution);
     }
 }
@@ -63,9 +64,8 @@ void GreedyAlgorithm::evaluate()
 
 void GreedyAlgorithm::saveResults()
 {
-    const std::string file_name = "greedy_results.csv";
     std::ofstream result_file;
-    result_file.open(file_name, std::ios::app);
+    result_file.open(result_file_name, std::ios::app);
     for (int i = 0; i < solutions.size(); i++)
         result_file << i + 1 << ";" << fitness_values[i] << std::endl;
     result_file.close();

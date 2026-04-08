@@ -1,5 +1,5 @@
 
-#include "Solution.h"
+#include "../include/Solution.h"
 #include <cstdlib>
 #include <string>
 #include <algorithm>
@@ -78,6 +78,22 @@ Solution Solution::operator+(const Solution& father) const
     }
 
     return child;
+}
+
+void Solution::swap()
+{
+    int first_index = rand() % jobs_sequence_length;
+    int second_index = rand() % jobs_sequence_length;
+
+    if (first_index == second_index)
+    {
+        while (first_index != second_index)
+            second_index = rand() % jobs_sequence_length;
+    }
+
+    unsigned int temp = job_sequence[first_index];
+    job_sequence[first_index] = job_sequence[second_index];
+    job_sequence[second_index] = temp;
 }
 
 unsigned int Solution::getJobNumber(unsigned int index) {return job_sequence[index];}

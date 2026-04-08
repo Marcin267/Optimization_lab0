@@ -1,9 +1,30 @@
 {
-  "problem_file": "testData.txt",
-  "algorithms": ["genetic"],
-  "population_size": 100,
-  "generations": 100,
+  "problem_files": [
+    "tai20_5_0.fsp",
+    "tai20_10_0.fsp",
+    "tai20_20_0.fsp",
+    "tai100_10_0.fsp",
+    "tai100_20_0.fsp",
+    "tai500_20_0.fsp"
+  ],
+  "result_files": {
+    "genetic": "genetic_results.csv",
+    "random": "random_results.csv",
+    "simulated_annealing": "simulated_annealing_results.csv",
+    "greedy": "greedy_results.csv"
+  },
+  "algorithm_counts": {
+    "genetic": 1,
+    "random": 1000,
+    "simulated_annealing": 1
+  },
+  "population_size": 10,
+  "generations": 4,
   "mutation_prob": 0.8,
   "cross_prob": 0.1,
-  "tournament_size": 5
+  "tournament_size": 5,
+  "max_step": 100,
+  "max_temperature": 1000,
+  "min_temperature": 0.01,
+  "cooling_rate": 0.70
 }

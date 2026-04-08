@@ -4,14 +4,18 @@ project(Optimization_lab0)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Optimization_lab0 main.cpp
-        Problem.cpp
-        Problem.h
-        Solution.cpp
-        Solution.h
-        geneticAlgorithm.cpp
-        geneticAlgorithm.h
-        GreedyAlgorithm.cpp
-        GreedyAlgorithm.h
-        RandomAlgorithm.cpp
-        RandomAlgorithm.h
+        src/Problem.cpp
+        include/Problem.h
+        src/Solution.cpp
+        include/Solution.h
+        src/algorithms/GeneticAlgorithm.cpp
+        include/algorithms/GeneticAlgorithm.h
+        src/algorithms/GreedyAlgorithm.cpp
+        include/algorithms/GreedyAlgorithm.h
+        src/algorithms/RandomAlgorithm.cpp
+        include/algorithms/RandomAlgorithm.h
+        src/algorithms/SimulatedAnnealing.cpp
+        include/algorithms/SimulatedAnnealing.h
+        src/Simulation.cpp
+        include/Simulation.h
 )

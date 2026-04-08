@@ -1,5 +1,5 @@
-#include "Problem.h"
-#include "Solution.h"
+#include "../include/Problem.h"
+#include "../include/Solution.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>

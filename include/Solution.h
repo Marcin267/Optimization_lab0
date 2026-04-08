@@ -15,7 +15,9 @@ public:
     unsigned int getJobNumber(unsigned int index);
     const std::vector<unsigned int> getJobSequence() const;
     Solution operator+(const Solution& father) const;
+    void swap();
 };
+
 
 
 #endif //OPTIMIZATION_LAB0_SOLUTION_H

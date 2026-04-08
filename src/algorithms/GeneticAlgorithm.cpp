@@ -1,17 +1,21 @@
-#include "geneticAlgorithm.h"
+#include "../../include/algorithms/GeneticAlgorithm.h"
 #include <algorithm>
 #include <fstream>
 #include <iostream>
 #include <numeric>
 #include <utility>
 
-GeneticAlgorithm::GeneticAlgorithm(const Problem& problem_data)
+GeneticAlgorithm::GeneticAlgorithm(const Problem& problem_data, unsigned int pop_size, unsigned int generations_count,
+    float cross_prob, float mutation_prob, unsigned int tour_size, std::string file_name)
+    :   population_size(pop_size), generations(generations_count), cross_probability(cross_prob),
+        mutation_probability(mutation_prob),tournament_size(tour_size), result_file_name(file_name)
 {
     problem = &problem_data;
 
     population.reserve(population_size);
     new_generation.reserve(population_size);
     fitness_values.reserve(population_size);
+    run();
 }
 
 int GeneticAlgorithm::tournamentSelect()
@@ -90,12 +94,12 @@ void GeneticAlgorithm::saveResults(int generation, std::ofstream& results_file)
     results_file << generation_number << ";" << best << ";" << avg << ";" << worst << std::endl;
 }
 
-void GeneticAlgorithm::run(const std::string& file_name)
+void GeneticAlgorithm::run()
 {
     initialize();
 
     std::ofstream result_file;
-    result_file.open(file_name, std::ios::app);
+    result_file.open(result_file_name, std::ios::app);
 
     for (int generation = 1; generation <= generations; generation++)
     {
